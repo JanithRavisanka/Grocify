@@ -1,0 +1,500 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+    <!-- Top Header Bar -->
+    <LinearLayout
+        android:id="@+id/header_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/primary"
+        android:elevation="@dimen/elevation_app_bar"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="@dimen/padding_screen"
+        android:paddingTop="@dimen/spacing_lg"
+        android:paddingBottom="@dimen/spacing_lg"
+        android:fitsSystemWindows="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- Back button -->
+        <ImageView
+            android:layout_width="@dimen/touch_target_min"
+            android:layout_height="@dimen/touch_target_min"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:contentDescription="@string/cd_back"
+            android:focusable="true"
+            android:padding="@dimen/spacing_md"
+            android:src="@drawable/ic_back"
+            app:tint="@color/text_on_primary" />
+
+        <!-- App Title -->
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center"
+            android:text="@string/app_name"
+            android:textColor="@color/text_on_primary"
+            android:textSize="@dimen/text_size_h3"
+            android:textStyle="bold" />
+
+        <!-- Spacer -->
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <!-- Shopping cart icon with badge -->
+        <FrameLayout
+            android:id="@+id/cart_button_container"
+            android:layout_width="@dimen/touch_target_min"
+            android:layout_height="@dimen/touch_target_min"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:focusable="true">
+
+            <ImageView
+                android:id="@+id/shopping_cart_icon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_shopping_cart"
+                app:tint="@color/text_on_primary" />
+            <!-- NAV: to ShoppingCartActivity -->
+
+            <TextView
+                android:id="@+id/cart_badge"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_gravity="top|end"
+                android:layout_marginTop="6dp"
+                android:layout_marginEnd="6dp"
+                android:background="@drawable/bg_badge"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:visibility="gone"
+                tools:text="9+"
+                tools:visibility="visible"/>
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+    <!-- Title Section -->
+    <TextView
+        android:id="@+id/main_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_lg"
+        android:fontFamily="sans-serif-medium"
+        android:text="Select Your Groceries"
+        android:textColor="@color/text_primary"
+        android:textSize="@dimen/text_size_h2"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/header_bar" />
+
+    <!-- Search Bar -->
+    <LinearLayout
+        android:id="@+id/search_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/margin_screen"
+        android:layout_marginTop="@dimen/spacing_lg"
+        android:background="@drawable/bg_search"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="@dimen/padding_card"
+        android:paddingVertical="@dimen/spacing_md"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/main_title">
+
+        <ImageView
+            android:layout_width="@dimen/size_icon_md"
+            android:layout_height="@dimen/size_icon_md"
+            android:layout_marginEnd="@dimen/spacing_md"
+            android:contentDescription="@string/cd_search"
+            android:src="@drawable/ic_search" />
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:fontFamily="sans-serif"
+            android:hint="Search Products"
+            android:inputType="text"
+            android:textColor="@color/text_primary"
+            android:textColorHint="@color/text_hint"
+            android:textSize="@dimen/text_size_body1" />
+
+    </LinearLayout>
+
+    <!-- Category Filter Row -->
+    <HorizontalScrollView
+        android:id="@+id/category_filters"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_lg"
+        android:paddingHorizontal="@dimen/padding_screen"
+        android:scrollbars="none"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/search_container">
+
+        <LinearLayout
+            android:id="@+id/category_filter_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!-- All Categories Filter -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/spacing_sm"
+                android:background="@drawable/bg_chip_selected"
+                android:clickable="true"
+                android:focusable="true"
+                android:fontFamily="sans-serif-medium"
+                android:paddingHorizontal="@dimen/padding_button"
+                android:paddingVertical="@dimen/padding_chip"
+                android:text="All"
+                android:textColor="@color/text_on_primary"
+                android:textSize="@dimen/text_size_body2" />
+
+            <!-- Vegetables Filter -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/spacing_sm"
+                android:background="@drawable/bg_chip_unselected"
+                android:clickable="true"
+                android:focusable="true"
+                android:fontFamily="sans-serif-medium"
+                android:paddingHorizontal="@dimen/padding_button"
+                android:paddingVertical="@dimen/padding_chip"
+                android:text="@string/category_vegetables"
+                android:textColor="@color/text_secondary"
+                android:textSize="@dimen/text_size_body2" />
+
+            <!-- Fruits Filter -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/spacing_sm"
+                android:background="@drawable/bg_chip_unselected"
+                android:clickable="true"
+                android:focusable="true"
+                android:fontFamily="sans-serif-medium"
+                android:paddingHorizontal="@dimen/padding_button"
+                android:paddingVertical="@dimen/padding_chip"
+                android:text="@string/category_fruits"
+                android:textColor="@color/text_secondary"
+                android:textSize="@dimen/text_size_body2" />
+
+            <!-- Dairy Filter -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/spacing_sm"
+                android:background="@drawable/bg_chip_unselected"
+                android:clickable="true"
+                android:focusable="true"
+                android:fontFamily="sans-serif-medium"
+                android:paddingHorizontal="@dimen/padding_button"
+                android:paddingVertical="@dimen/padding_chip"
+                android:text="@string/category_dairy"
+                android:textColor="@color/text_secondary"
+                android:textSize="@dimen/text_size_body2" />
+
+            <!-- Bakery Filter -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/spacing_sm"
+                android:background="@drawable/bg_chip_unselected"
+                android:clickable="true"
+                android:focusable="true"
+                android:fontFamily="sans-serif-medium"
+                android:paddingHorizontal="@dimen/padding_button"
+                android:paddingVertical="@dimen/padding_chip"
+                android:text="@string/category_bakery"
+                android:textColor="@color/text_secondary"
+                android:textSize="@dimen/text_size_body2" />
+
+            <!-- Meat Filter -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/spacing_sm"
+                android:background="@drawable/bg_chip_unselected"
+                android:clickable="true"
+                android:focusable="true"
+                android:fontFamily="sans-serif-medium"
+                android:paddingHorizontal="@dimen/padding_button"
+                android:paddingVertical="@dimen/padding_chip"
+                android:text="@string/category_meat"
+                android:textColor="@color/text_secondary"
+                android:textSize="@dimen/text_size_body2" />
+
+            <!-- Snacks Filter -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_chip_unselected"
+                android:clickable="true"
+                android:focusable="true"
+                android:fontFamily="sans-serif-medium"
+                android:paddingHorizontal="@dimen/padding_button"
+                android:paddingVertical="@dimen/padding_chip"
+                android:text="@string/category_snacks"
+                android:textColor="@color/text_secondary"
+                android:textSize="@dimen/text_size_body2" />
+
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
+    <!-- Grocery Items Grid -->
+    <ScrollView
+        android:id="@+id/grocery_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/spacing_lg"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toTopOf="@id/bottom_navigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/category_filters">
+
+        <GridLayout
+            android:id="@+id/grocery_grid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="2"
+            android:padding="@dimen/padding_screen"
+            android:alignmentMode="alignBounds"
+            android:columnOrderPreserved="false"
+            android:useDefaultMargins="false">
+
+            <!-- Vegetables Category Items (Default "All" shows mixed items) -->
+            
+            <!-- Grocery Item 1 - Carrot (Vegetables) -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="@dimen/spacing_sm"
+                android:background="@drawable/bg_card"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="@dimen/padding_card">
+
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_marginBottom="@dimen/spacing_sm"
+                    android:background="@drawable/placeholder_item"
+                    android:contentDescription="Carrot" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="Carrot"
+                    android:textColor="@color/text_primary"
+                    android:textSize="@dimen/text_size_body2"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <!-- Grocery Item 2 - Apple (Fruits) -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="@dimen/spacing_sm"
+                android:background="@drawable/bg_card"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="@dimen/padding_card">
+
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_marginBottom="@dimen/spacing_sm"
+                    android:background="@drawable/placeholder_item"
+                    android:contentDescription="Apple" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="Apple"
+                    android:textColor="@color/text_primary"
+                    android:textSize="@dimen/text_size_body2"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <!-- Grocery Item 3 - Milk (Dairy) -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="@dimen/spacing_sm"
+                android:background="@drawable/bg_card"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="@dimen/padding_card">
+
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_marginBottom="@dimen/spacing_sm"
+                    android:background="@drawable/placeholder_item"
+                    android:contentDescription="Milk" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="Milk"
+                    android:textColor="@color/text_primary"
+                    android:textSize="@dimen/text_size_body2"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <!-- Grocery Item 4 - Bread (Bakery) -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="@dimen/spacing_sm"
+                android:background="@drawable/bg_card"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="@dimen/padding_card">
+
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_marginBottom="@dimen/spacing_sm"
+                    android:background="@drawable/placeholder_item"
+                    android:contentDescription="Bread" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="Bread"
+                    android:textColor="@color/text_primary"
+                    android:textSize="@dimen/text_size_body2"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <!-- Grocery Item 5 - Chicken (Meat) -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="@dimen/spacing_sm"
+                android:background="@drawable/bg_card"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="@dimen/padding_card">
+
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_marginBottom="@dimen/spacing_sm"
+                    android:background="@drawable/placeholder_item"
+                    android:contentDescription="Chicken" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="Chicken"
+                    android:textColor="@color/text_primary"
+                    android:textSize="@dimen/text_size_body2"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <!-- Grocery Item 6 - Chips (Snacks) -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="@dimen/spacing_sm"
+                android:background="@drawable/bg_card"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="@dimen/padding_card">
+
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_marginBottom="@dimen/spacing_sm"
+                    android:background="@drawable/placeholder_item"
+                    android:contentDescription="Chips" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="Chips"
+                    android:textColor="@color/text_primary"
+                    android:textSize="@dimen/text_size_body2"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+        </GridLayout>
+
+    </ScrollView>
+
+    <!-- Modern Bottom Navigation -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/surface"
+        app:elevation="@dimen/elevation_bottom_nav"
+        app:itemIconTint="@color/bottom_nav_color_selector"
+        app:itemTextColor="@color/bottom_nav_color_selector"
+        app:labelVisibilityMode="unlabeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:menu="@menu/bottom_nav_menu" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

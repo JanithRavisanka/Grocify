@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Base spacing values -->
+    <dimen name="spacing_xs">4dp</dimen>
+    <dimen name="spacing_sm">8dp</dimen>
+    <dimen name="spacing_md">12dp</dimen>
+    <dimen name="spacing_lg">16dp</dimen>
+    <dimen name="spacing_xl">20dp</dimen>
+    <dimen name="spacing_xxl">24dp</dimen>
+    <dimen name="spacing_xxxl">32dp</dimen>
+    
+    <!-- Margins -->
+    <dimen name="margin_screen">16dp</dimen>
+    <dimen name="margin_content">16dp</dimen>
+    <dimen name="margin_card">12dp</dimen>
+    <dimen name="margin_item">8dp</dimen>
+    
+    <!-- Padding -->
+    <dimen name="padding_screen">16dp</dimen>
+    <dimen name="padding_card">16dp</dimen>
+    <dimen name="padding_item">12dp</dimen>
+    <dimen name="padding_button">12dp</dimen>
+    <dimen name="padding_chip">8dp</dimen>
+    
+    <!-- Elevation -->
+    <dimen name="elevation_card">4dp</dimen>
+    <dimen name="elevation_fab">8dp</dimen>
+    <dimen name="elevation_app_bar">4dp</dimen>
+    <dimen name="elevation_bottom_nav">8dp</dimen>
+    <dimen name="elevation_bottom_sheet">16dp</dimen>
+    
+    <!-- Border radius -->
+    <dimen name="radius_xs">4dp</dimen>
+    <dimen name="radius_sm">8dp</dimen>
+    <dimen name="radius_md">12dp</dimen>
+    <dimen name="radius_lg">16dp</dimen>
+    <dimen name="radius_xl">20dp</dimen>
+    
+    <!-- Sizes -->
+    <dimen name="size_icon_sm">16dp</dimen>
+    <dimen name="size_icon_md">24dp</dimen>
+    <dimen name="size_icon_lg">32dp</dimen>
+    <dimen name="size_icon_xl">48dp</dimen>
+    <dimen name="size_avatar">40dp</dimen>
+    <dimen name="size_category_icon">64dp</dimen>
+    <dimen name="size_item_image">64dp</dimen>
+    <dimen name="size_fab">56dp</dimen>
+    <dimen name="size_button_height">48dp</dimen>
+    <dimen name="size_toolbar_height">56dp</dimen>
+    <dimen name="size_bottom_bar">64dp</dimen>
+    
+    <!-- Touch targets -->
+    <dimen name="touch_target_min">48dp</dimen>
+    <dimen name="touch_target_button">44dp</dimen>
+    
+    <!-- Text sizes -->
+    <dimen name="text_size_h1">28sp</dimen>
+    <dimen name="text_size_h2">24sp</dimen>
+    <dimen name="text_size_h3">20sp</dimen>
+    <dimen name="text_size_h4">18sp</dimen>
+    <dimen name="text_size_body1">16sp</dimen>
+    <dimen name="text_size_body2">14sp</dimen>
+    <dimen name="text_size_caption">12sp</dimen>
+    <dimen name="text_size_overline">10sp</dimen>
+    <dimen name="text_size_h5">24sp</dimen>
+    <dimen name="text_size_h6">20sp</dimen>
+    <dimen name="text_size_subtitle1">16sp</dimen>
+    <dimen name="text_size_subtitle2">14sp</dimen>
+    
+    <!-- Line heights -->
+    <dimen name="line_height_h1">36dp</dimen>
+    <dimen name="line_height_h2">32dp</dimen>
+    <dimen name="line_height_body">24dp</dimen>
+    <dimen name="line_height_caption">16dp</dimen>
+    
+    <!-- Stroke widths -->
+    <dimen name="stroke_width_thin">1dp</dimen>
+    <dimen name="stroke_width_medium">2dp</dimen>
+    <dimen name="stroke_width_thick">3dp</dimen>
+    
+    <!-- Grid spacing -->
+    <dimen name="grid_spacing">8dp</dimen>
+    <dimen name="grid_margin">16dp</dimen>
+    
+    <!-- Bottom sheet -->
+    <dimen name="bottom_sheet_peek_height">80dp</dimen>
+    <dimen name="bottom_sheet_corner_radius">16dp</dimen>
+    
+    <!-- Search bar -->
+    <dimen name="search_bar_height">48dp</dimen>
+    <dimen name="search_bar_radius">24dp</dimen>
+    
+    <!-- Progress indicators -->
+    <dimen name="progress_size_sm">16dp</dimen>
+    <dimen name="progress_size_md">24dp</dimen>
+    <dimen name="progress_size_lg">32dp</dimen>
+
+    <dimen name="chip_padding_horizontal">12dp</dimen>
+    <dimen name="chip_padding_vertical">6dp</dimen>
+    <dimen name="corner_radius_button">24dp</dimen>
+    <dimen name="corner_radius_card">16dp</dimen>
+    <dimen name="corner_radius_chip">20dp</dimen>
+</resources>
