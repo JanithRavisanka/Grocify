@@ -163,6 +163,7 @@
 
             <!-- All Categories Filter -->
             <TextView
+                android:id="@+id/category_filter_all"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/spacing_sm"
@@ -172,12 +173,13 @@
                 android:fontFamily="sans-serif-medium"
                 android:paddingHorizontal="@dimen/padding_button"
                 android:paddingVertical="@dimen/padding_chip"
-                android:text="All"
+                android:text="@string/all"
                 android:textColor="@color/text_on_primary"
                 android:textSize="@dimen/text_size_body2" />
 
             <!-- Vegetables Filter -->
             <TextView
+                android:id="@+id/category_filter_vegetables"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/spacing_sm"
@@ -193,6 +195,7 @@
 
             <!-- Fruits Filter -->
             <TextView
+                android:id="@+id/category_filter_fruits"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/spacing_sm"
@@ -208,6 +211,7 @@
 
             <!-- Dairy Filter -->
             <TextView
+                android:id="@+id/category_filter_dairy"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/spacing_sm"
@@ -223,6 +227,7 @@
 
             <!-- Bakery Filter -->
             <TextView
+                android:id="@+id/category_filter_bakery"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/spacing_sm"
@@ -238,6 +243,7 @@
 
             <!-- Meat Filter -->
             <TextView
+                android:id="@+id/category_filter_meat"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/spacing_sm"
@@ -253,6 +259,7 @@
 
             <!-- Snacks Filter -->
             <TextView
+                android:id="@+id/category_filter_snacks"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/bg_chip_unselected"
@@ -310,14 +317,15 @@
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:layout_marginBottom="@dimen/spacing_sm"
-                    android:background="@drawable/placeholder_item"
-                    android:contentDescription="Carrot" />
+                    android:contentDescription="@string/carrot"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/carrot" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-medium"
-                    android:text="Carrot"
+                    android:text="@string/carrot"
                     android:textColor="@color/text_primary"
                     android:textSize="@dimen/text_size_body2"
                     android:textStyle="bold" />
@@ -341,14 +349,15 @@
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:layout_marginBottom="@dimen/spacing_sm"
-                    android:background="@drawable/placeholder_item"
-                    android:contentDescription="Apple" />
+                    android:contentDescription="@string/apple"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/apple" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-medium"
-                    android:text="Apple"
+                    android:text="@string/apple"
                     android:textColor="@color/text_primary"
                     android:textSize="@dimen/text_size_body2"
                     android:textStyle="bold" />
@@ -372,14 +381,15 @@
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:layout_marginBottom="@dimen/spacing_sm"
-                    android:background="@drawable/placeholder_item"
-                    android:contentDescription="Milk" />
+                    android:contentDescription="@string/milk"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/milk" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-medium"
-                    android:text="Milk"
+                    android:text="@string/milk"
                     android:textColor="@color/text_primary"
                     android:textSize="@dimen/text_size_body2"
                     android:textStyle="bold" />
@@ -403,14 +413,15 @@
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:layout_marginBottom="@dimen/spacing_sm"
-                    android:background="@drawable/placeholder_item"
-                    android:contentDescription="Bread" />
+                    android:contentDescription="@string/bread"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/bread" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-medium"
-                    android:text="Bread"
+                    android:text="@string/bread"
                     android:textColor="@color/text_primary"
                     android:textSize="@dimen/text_size_body2"
                     android:textStyle="bold" />
@@ -434,14 +445,15 @@
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:layout_marginBottom="@dimen/spacing_sm"
-                    android:background="@drawable/placeholder_item"
-                    android:contentDescription="Chicken" />
+                    android:contentDescription="@string/chicken"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/chicken" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-medium"
-                    android:text="Chicken"
+                    android:text="@string/chicken"
                     android:textColor="@color/text_primary"
                     android:textSize="@dimen/text_size_body2"
                     android:textStyle="bold" />
@@ -465,14 +477,463 @@
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:layout_marginBottom="@dimen/spacing_sm"
-                    android:background="@drawable/placeholder_item"
-                    android:contentDescription="Chips" />
+                    android:contentDescription="@string/chips"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/chips" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-medium"
-                    android:text="Chips"
+                    android:text="@string/chips"
+                    android:textColor="@color/text_primary"
+                    android:textSize="@dimen/text_size_body2"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <!-- Grocery Item 7 - Grapes (Fruits) -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="@dimen/spacing_sm"
+                android:background="@drawable/bg_card"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="@dimen/padding_card">
+
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_marginBottom="@dimen/spacing_sm"
+                    android:contentDescription="Grapes"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/grapes" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="Grapes"
+                    android:textColor="@color/text_primary"
+                    android:textSize="@dimen/text_size_body2"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <!-- Grocery Item 8 - Orange (Fruits) -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="@dimen/spacing_sm"
+                android:background="@drawable/bg_card"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="@dimen/padding_card">
+
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_marginBottom="@dimen/spacing_sm"
+                    android:contentDescription="Orange"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/orange" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="Orange"
+                    android:textColor="@color/text_primary"
+                    android:textSize="@dimen/text_size_body2"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <!-- Grocery Item 9 - Strawberry (Fruits) -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="@dimen/spacing_sm"
+                android:background="@drawable/bg_card"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="@dimen/padding_card">
+
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_marginBottom="@dimen/spacing_sm"
+                    android:contentDescription="Strawberry"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/strawberry" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="Strawberry"
+                    android:textColor="@color/text_primary"
+                    android:textSize="@dimen/text_size_body2"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <!-- Grocery Item 10 - Watermelon (Fruits) -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="@dimen/spacing_sm"
+                android:background="@drawable/bg_card"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="@dimen/padding_card">
+
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_marginBottom="@dimen/spacing_sm"
+                    android:contentDescription="Watermelon"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/watermelon" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="Watermelon"
+                    android:textColor="@color/text_primary"
+                    android:textSize="@dimen/text_size_body2"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <!-- Grocery Item 11 - Banana (Fruits) -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="@dimen/spacing_sm"
+                android:background="@drawable/bg_card"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="@dimen/padding_card">
+
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_marginBottom="@dimen/spacing_sm"
+                    android:contentDescription="@string/banana"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/banana" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="@string/banana"
+                    android:textColor="@color/text_primary"
+                    android:textSize="@dimen/text_size_body2"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <!-- Grocery Item 12 - Tomato (Vegetables) -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="@dimen/spacing_sm"
+                android:background="@drawable/bg_card"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="@dimen/padding_card">
+
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_marginBottom="@dimen/spacing_sm"
+                    android:contentDescription="Tomato"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/tomato" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="Tomato"
+                    android:textColor="@color/text_primary"
+                    android:textSize="@dimen/text_size_body2"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <!-- Grocery Item 13 - Potato (Vegetables) -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="@dimen/spacing_sm"
+                android:background="@drawable/bg_card"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="@dimen/padding_card">
+
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_marginBottom="@dimen/spacing_sm"
+                    android:contentDescription="Potato"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/potato" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="Potato"
+                    android:textColor="@color/text_primary"
+                    android:textSize="@dimen/text_size_body2"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <!-- Grocery Item 14 - Cheese (Dairy) -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="@dimen/spacing_sm"
+                android:background="@drawable/bg_card"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="@dimen/padding_card">
+
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_marginBottom="@dimen/spacing_sm"
+                    android:contentDescription="Cheese"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/cheese" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="Cheese"
+                    android:textColor="@color/text_primary"
+                    android:textSize="@dimen/text_size_body2"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <!-- Grocery Item 15 - Butter (Dairy) -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="@dimen/spacing_sm"
+                android:background="@drawable/bg_card"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="@dimen/padding_card">
+
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_marginBottom="@dimen/spacing_sm"
+                    android:contentDescription="Butter"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/butter" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="Butter"
+                    android:textColor="@color/text_primary"
+                    android:textSize="@dimen/text_size_body2"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <!-- Grocery Item 16 - Cake (Bakery) -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="@dimen/spacing_sm"
+                android:background="@drawable/bg_card"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="@dimen/padding_card">
+
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_marginBottom="@dimen/spacing_sm"
+                    android:contentDescription="Cake"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/cake" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="Cake"
+                    android:textColor="@color/text_primary"
+                    android:textSize="@dimen/text_size_body2"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <!-- Grocery Item 17 - Bagel (Bakery) -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="@dimen/spacing_sm"
+                android:background="@drawable/bg_card"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="@dimen/padding_card">
+
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_marginBottom="@dimen/spacing_sm"
+                    android:contentDescription="Bagel"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/bagel" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="Bagel"
+                    android:textColor="@color/text_primary"
+                    android:textSize="@dimen/text_size_body2"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <!-- Grocery Item 18 - Beef (Meat) -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="@dimen/spacing_sm"
+                android:background="@drawable/bg_card"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="@dimen/padding_card">
+
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_marginBottom="@dimen/spacing_sm"
+                    android:contentDescription="Beef"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/beef" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="Beef"
+                    android:textColor="@color/text_primary"
+                    android:textSize="@dimen/text_size_body2"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <!-- Grocery Item 19 - Cookies (Snacks) -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="@dimen/spacing_sm"
+                android:background="@drawable/bg_card"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="@dimen/padding_card">
+
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_marginBottom="@dimen/spacing_sm"
+                    android:contentDescription="Cookies"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/cookies" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="Cookies"
+                    android:textColor="@color/text_primary"
+                    android:textSize="@dimen/text_size_body2"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <!-- Grocery Item 20 - Crackers (Snacks) -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="@dimen/spacing_sm"
+                android:background="@drawable/bg_card"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="@dimen/padding_card">
+
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_marginBottom="@dimen/spacing_sm"
+                    android:contentDescription="Crackers"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/crackers" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="Crackers"
                     android:textColor="@color/text_primary"
                     android:textSize="@dimen/text_size_body2"
                     android:textStyle="bold" />

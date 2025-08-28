@@ -5,6 +5,7 @@
     <string name="app_tagline">Smart grocery shopping made simple</string>
     
     <!-- Navigation -->
+    <string name="groceries">Groceries</string>
     <string name="nav_home">Home</string>
     <string name="nav_categories">Categories</string>
     <string name="nav_lists">My Lists</string>
@@ -129,11 +130,39 @@
     <string name="list_saved_successfully">List saved successfully</string>
     <string name="list_deleted_successfully">List deleted successfully</string>
     <string name="list_shared_successfully">List shared successfully</string>
-    
+    <string name="carrot">Carrot</string>
+    <string name="milk">Milk</string>
+    <string name="apple">Apple</string>
+    <string name="all">All</string>
+    <string name="bread">Bread</string>
+    <string name="chicken">Chicken</string>
+    <string name="chips">Chips</string>
+    <string name="banana">Banana</string>
+
     <!-- Arrays -->
     <string-array name="sort_options">
         <item>@string/sort_name</item>
         <item>@string/sort_price</item>
         <item>@string/sort_popularity</item>
     </string-array>
+
+    <!-- Authentication -->
+    <string name="welcome_back">Welcome Back!</string>
+
+    <string name="password">Password</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="sign_in">Sign In</string>
+    <string name="or">or</string>
+    <string name="dont_have_account">Don\'t have an account?</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="create_account">Create Account</string>
+    <string name="signup_subtitle">Join Grocify and start organizing your shopping</string>
+    <string name="full_name">Full Name</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="terms_conditions">I agree to the Terms &amp; Conditions</string>
+    <string name="already_have_account">Already have an account?</string>
+    <string name="sample_name">John Doe</string>
+    <string name="sample_email">john.doe@example.com</string>
+    <string name="sample_password">••••••••</string>
+
 </resources>

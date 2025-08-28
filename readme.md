@@ -1,163 +1,278 @@
-ROLE
-You are an Android XML UI designer. Produce a clean, modern **XML-only** Android Studio project for a grocery app called **Grocify**. The user flow is:
-**Categories → browse items → select → build list → save**.
-Do NOT add Kotlin/Java. Where navigation is required, add clear XML comments that describe the intended Intent target (e.g., <!-- NAV: to CategoryItemsActivity -->).
+# 🛒 Grocify - Smart Grocery Management App
 
------------------------------------
-🎯 EXAM MARKING RULES TO FOLLOW
-(From student's Lab Exam 02: XML-only UI, color rule, layouts, views, interactivity via intents, creativity)
------------------------------------
-1) Ideation (2) — The app is a mobile grocery organizer. Target: everyday shoppers; Problem: fast list creation from categories; Core features: category browsing, item selection, list builder, saved lists. 
-2) Colors 60-30-10 (2) — Define `colors.xml` with a consistent palette and apply:
-   • Primary 60% (background surfaces) 
-   • Secondary 30% (cards, bars) 
-   • Accent 10% (CTA buttons, highlights)
-3) Layouts (2) — Use:
-   • ConstraintLayout for main screens
-   • LinearLayout (vertical/horizontal) for forms/rows
-   • FrameLayout for splash or overlays
-   • ScrollView/NestedScrollView where content can overflow
-   Apply ample margins/padding.
-4) Views (2) — Include TextView, EditText, Button, ImageView; also show RecyclerView/ListView placeholders for lists. All user-visible text in `strings.xml`.
-5) Interactivity (1) — Model **Intent navigation** with explicit XML comments on clickable components (no code). Use `android:clickable="true"` and `android:focusable="true"` where needed and comment the target Activity.
-6) Creativity (1) — Modern grocery theme, nice iconography, spacing, and hierarchy.
+[![Android](https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white)](https://developer.android.com/)
+[![Kotlin](https://img.shields.io/badge/Kotlin-0095D5?style=for-the-badge&logo=kotlin&logoColor=white)](https://kotlinlang.org/)
+[![Material Design](https://img.shields.io/badge/Material--Design-757575?style=for-the-badge&logo=material-design&logoColor=white)](https://material.io/design)
 
------------------------------------
-📱 MAIN WINDOWS & FUNCTIONALITIES (CATEGORIES → LIST BUILDER FLOW)
------------------------------------
-A) Splash (activity_splash.xml; FrameLayout)
-   - Centered logo + tagline
-   - <!-- NAV: to HomeActivity after delay -->
+> **Your personal grocery shopping companion** - Organize, plan, and manage your shopping experience with ease.
 
-B) Home / Categories Grid (activity_home.xml; ConstraintLayout)
-   - App bar with title "Grocify"
-   - Search EditText (hint: "Search categories")
-   - RecyclerView (Grid, 2–3 columns) of category cards:
-       * ImageView (category icon), TextView (name)
-       * Examples: Fruits, Vegetables, Dairy, Bakery, Meat, Snacks, Beverages, Household
-   - FAB "My Lists"
-   - Click behaviors (as comments):
-       • Category card <!-- NAV: to CategoryItemsActivity with categoryId -->
+## ✨ **Features**
 
-C) Category Items (activity_category_items.xml; ConstraintLayout)
-   - App bar with category name + back
-   - Filter row (Chip-like buttons using TextViews or Material style if available) and a sort dropdown mock (Spinner)
-   - RecyclerView of **Item Card** rows:
-       • ImageView (item)
-       • Texts: name, unit (e.g., 1kg), optional price placeholder
-       • Small quantity stepper (− / quantity / +) using three Buttons
-       • "Add" Button (accent)
-       • Comment navs:
-         - Quantity stepper: visual only
-         - "Add": adds to "Selected Items" panel (visual only)
-   - Bottom sticky "Selected Items" mini-panel:
-       • Text: "{N} selected"
-       • Button: "Build List" <!-- NAV: to ListBuilderActivity -->
+### 🛍️ **Smart Grocery Management**
+- **Category-based organization** - Group items by type (vegetables, fruits, dairy, etc.)
+- **Visual item display** - Custom icons for each grocery item
+- **Quick add to cart** - Streamlined shopping experience
+- **Search functionality** - Find items quickly
 
-D) List Builder (activity_list_builder.xml; ConstraintLayout or BottomSheet-like)
-   - Title: "Build List"
-   - EditText: "List name"
-   - Recycler-like column of selected items with quantity and a remove (🗑) ImageView
-   - Summary row: item count
-   - Buttons: "Save List" (accent), "Clear"
-   - Comments:
-       • "Save List" <!-- NAV: to ListsActivity (and visually show the new list) -->
+### 📋 **Shopping Lists**
+- **Multiple lists** - Create separate lists for different purposes
+- **Item management** - Add, remove, and organize items
+- **Progress tracking** - Mark items as purchased
+- **List sharing** - Collaborate with family members
 
-E) Saved Lists (activity_lists.xml; ConstraintLayout)
-   - Title: "My Lists"
-   - RecyclerView of list cards:
-       • Texts: List name, created date, item count
-       • Icons: Share, Delete (ImageViews)
-       • Card click <!-- NAV: to ListDetailActivity with listId -->
-   - Empty state placeholder when no lists
-   - FAB: "New from Categories" <!-- NAV: to HomeActivity -->
+### 👤 **User Experience**
+- **Secure authentication** - Sign up, sign in, and guest mode
+- **Profile management** - Customize your experience
+- **Preferences** - Tailor the app to your needs
+- **Settings** - App configuration and data management
 
-F) List Detail (activity_list_detail.xml; ConstraintLayout)
-   - Title: List name
-   - Search within list
-   - RecyclerView of items with:
-       • Checkbox (purchased), item name, quantity
-       • Optional "move to…" mock menu (TextView)
-   - Bottom bar:
-       • Buttons: "Edit Name", "Share", "Delete"
-   - Comments:
-       • Share/Delete are visual only
+### 🎨 **Modern Design**
+- **Material Design 3** - Latest Android design guidelines
+- **Responsive layout** - Works on all screen sizes
+- **Dark/Light themes** - Choose your preferred appearance
+- **Smooth animations** - Polished user experience
 
-G) Optional Settings/Profile (activity_settings.xml)
-   - Theme toggles (Light/Dark mock), Accent picker preview chips (use accent color blocks)
-   - Profile section (name, email—visual only)
+## 🚀 **Quick Start**
 
------------------------------------
-🎨 RESOURCES
------------------------------------
-1) colors.xml (apply 60-30-10)
-   - primary: #0E7C3A (Grocery green) — 60%
-   - primaryVariant: #0B6A32
-   - secondary: #F2F5F3 (cards/surfaces) — 30%
-   - secondaryVariant: #E6ECE8
-   - accent: #F5A524 (CTAs/highlights) — 10%
-   - textPrimary: #101114
-   - textSecondary: #67707A
-   - border: #D9DFDA
+### **Prerequisites**
+- Android Studio Arctic Fox or later
+- Android SDK API 24+ (Android 7.0)
+- Kotlin 1.8+
+- Gradle 7.0+
 
-2) strings.xml (examples)
-   - app_name, search_categories, my_lists, create_from_categories
-   - build_list, save_list, clear, selected_count, list_name_hint
-   - share, delete, edit_name, items, quantity, add, increase, decrease
-   - categories: fruits, vegetables, dairy, bakery, meat, snacks, beverages, household
+### **Installation**
 
-3) drawables
-   - Rounded card backgrounds, ripple effects
-   - Placeholder category/item icons
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/yourusername/grocify.git
+   cd grocify
+   ```
 
------------------------------------
-📐 LAYOUT GUIDELINES
------------------------------------
-- Use ConstraintLayout on top-level screens; keep content within 16dp margins.
-- Use 8dp spacing between sibling views; 12–16dp padding inside cards.
-- For grids, show 2–3 columns depending on width (use fixed span assumption in XML).
-- Item row content:
-   • Left: 64dp square ImageView
-   • Middle: name + unit/price (TextViews)
-   • Right: quantity stepper (−, qty, +) over "Add" button
-- Accessibility: set contentDescription on icons/images.
+2. **Open in Android Studio**
+   - Launch Android Studio
+   - Select "Open an existing project"
+   - Navigate to the Grocify folder
+   - Click "OK"
 
------------------------------------
-🧭 NAVIGATION PLAN (XML comments only, no code)
------------------------------------
-- From Splash → Home
-- From Home:
-   • Category card → Category Items (pass categoryId conceptually)
-   • FAB "My Lists" → Saved Lists
-- From Category Items:
-   • "Build List" → List Builder
-- From List Builder:
-   • "Save List" → Saved Lists (new list visible)
-- From Saved Lists:
-   • List card → List Detail
-   • FAB → Home
+3. **Sync and build**
+   ```bash
+   ./gradlew assembleDebug
+   ```
 
-Add `<!-- NAV: to <ActivityName> -->` comments on clickable views (Buttons, cards, FABs). This models Intent navigation without writing code.
+4. **Run on device**
+   - Connect an Android device or start an emulator
+   - Click the "Run" button in Android Studio
 
------------------------------------
-📂 REQUIRED FILES TO OUTPUT
------------------------------------
-/app/src/main/res/layout/
-   activity_splash.xml
-   activity_home.xml
-   item_category.xml        (card for categories)
-   activity_category_items.xml
-   item_grocery.xml         (row for a grocery item)
-   activity_list_builder.xml
-   activity_lists.xml
-   item_saved_list.xml      (row for a saved list)
-   activity_list_detail.xml
-   activity_settings.xml    (optional)
-/app/src/main/res/values/
-   colors.xml
-   strings.xml
-   dimens.xml               (8dp, 12dp, 16dp spacing tokens)
-/app/src/main/res/drawable/
-   bg_card.xml, bg_chip.xml, ripple_primary.xml, placeholder icons
+## 📱 **Screenshots**
 
-Ensure every screen is fully designed in XML with realistic placeholders so screenshots can be captured for the report.
+| Home Screen | Shopping Lists | User Profile | Settings |
+|-------------|----------------|--------------|----------|
+| ![Home](screenshots/home.png) | ![Lists](screenshots/lists.png) | ![Profile](screenshots/profile.png) | ![Settings](screenshots/settings.png) |
+
+## 🏗️ **Architecture**
+
+### **Technology Stack**
+- **Language**: Kotlin
+- **UI Framework**: Material Design Components
+- **Architecture**: Activity-based with BaseNavigationActivity
+- **Data Storage**: SharedPreferences
+- **Build System**: Gradle with Kotlin DSL
+
+### **Project Structure**
+```
+app/src/main/
+├── java/com/example/grocify/
+│   ├── Activities/           # All app screens
+│   ├── BaseNavigationActivity.kt  # Navigation base class
+│   └── Utils/               # Helper classes
+├── res/
+│   ├── layout/              # UI layouts
+│   ├── drawable/            # Icons & graphics
+│   ├── values/              # Resources
+│   └── menu/                # Navigation menus
+└── AndroidManifest.xml      # App configuration
+```
+
+### **Key Components**
+- **BaseNavigationActivity** - Centralized navigation logic
+- **Authentication System** - Secure user management
+- **Bottom Navigation** - Consistent app navigation
+- **Custom Icons** - Visual grocery item representation
+
+## 🔧 **Configuration**
+
+### **Build Configuration**
+```kotlin
+android {
+    compileSdk = 34
+    defaultConfig {
+        applicationId = "com.example.grocify"
+        minSdk = 24
+        targetSdk = 34
+        versionCode = 1
+        versionName = "1.0.0"
+    }
+}
+```
+
+### **Dependencies**
+```kotlin
+dependencies {
+    implementation("androidx.core:core-ktx:1.12.0")
+    implementation("com.google.android.material:material:1.11.0")
+    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
+}
+```
+
+## 📖 **Usage Guide**
+
+### **Getting Started**
+1. **Launch the app** - Splash screen with authentication check
+2. **Sign in or create account** - Secure user authentication
+3. **Navigate with bottom tabs** - Groceries, Lists, Profile, Settings
+4. **Add items to cart** - Quick shopping list creation
+5. **Manage your lists** - Organize and track purchases
+
+### **Navigation**
+- **🛒 Groceries** - Main shopping interface
+- **📋 Lists** - Shopping list management
+- **👤 Profile** - User settings and preferences
+- **⚙️ Settings** - App configuration
+
+### **Features**
+- **Guest Mode** - Try the app without signing up
+- **Remember Me** - Stay logged in between sessions
+- **Profile Customization** - Personalize your experience
+- **Data Management** - Export, import, or clear your data
+
+## 🧪 **Testing**
+
+### **Running Tests**
+```bash
+# Unit tests
+./gradlew test
+
+# Instrumented tests
+./gradlew connectedAndroidTest
+
+# All tests
+./gradlew check
+```
+
+### **Test Coverage**
+- **Unit Tests** - Individual component testing
+- **Integration Tests** - Feature workflow testing
+- **UI Tests** - User interface validation
+
+## 🚀 **Deployment**
+
+### **Release Build**
+```bash
+./gradlew assembleRelease
+```
+
+### **Google Play Store**
+1. **Generate signed APK/AAB**
+2. **Upload to Google Play Console**
+3. **Configure store listing**
+4. **Submit for review**
+
+## 🤝 **Contributing**
+
+We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for details.
+
+### **Development Setup**
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Add tests
+5. Submit a pull request
+
+### **Code Style**
+- Follow Kotlin conventions
+- Use descriptive names
+- Add comments for complex logic
+- Write tests for new features
+
+## 📚 **Documentation**
+
+- **[Project Documentation](PROJECT_DOCUMENTATION.md)** - Comprehensive technical documentation
+- **[Image Setup Guide](IMAGE_SETUP_README.md)** - How to add custom images
+- **[API Reference](docs/API.md)** - Code documentation
+- **[Design Guidelines](docs/DESIGN.md)** - UI/UX standards
+
+## 🐛 **Troubleshooting**
+
+### **Common Issues**
+
+#### **Build Problems**
+```bash
+# Clean project
+./gradlew clean
+
+# Invalidate caches in Android Studio
+File → Invalidate Caches and Restart
+```
+
+#### **Runtime Issues**
+- Check logcat for error messages
+- Verify device compatibility (API 24+)
+- Test on different screen sizes
+
+#### **Image Display Issues**
+- Verify drawable resources exist
+- Check ImageView properties
+- Test on different densities
+
+### **Getting Help**
+- Check existing [Issues](../../issues)
+- Create a new issue with details
+- Include device information and logs
+
+## 📄 **License**
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 **Acknowledgments**
+
+- **Material Design** - UI framework and guidelines
+- **AndroidX** - Support libraries
+- **Kotlin** - Programming language
+- **Android Community** - Inspiration and support
+
+## 📞 **Contact**
+
+- **Project**: [Grocify Repository](../../)
+- **Issues**: [GitHub Issues](../../issues)
+- **Discussions**: [GitHub Discussions](../../discussions)
+- **Email**: [your-email@example.com]
+
+## 🎯 **Roadmap**
+
+### **Version 1.1** (Q2 2024)
+- [ ] Cloud synchronization
+- [ ] Barcode scanning
+- [ ] Price comparison
+
+### **Version 1.2** (Q3 2024)
+- [ ] Recipe integration
+- [ ] Meal planning
+- [ ] Social features
+
+### **Version 2.0** (Q4 2024)
+- [ ] Offline mode
+- [ ] Advanced analytics
+- [ ] Multi-language support
+
+---
+
+<div align="center">
+
+**Made with ❤️ for the Android community**
+
+[![GitHub stars](https://img.shields.io/github/stars/yourusername/grocify?style=social)](../../stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/yourusername/grocify?style=social)](../../network/members)
+[![GitHub issues](https://img.shields.io/github/issues/yourusername/grocify)](../../issues)
+[![GitHub pull requests](https://img.shields.io/github/issues-pr/yourusername/grocify)](../../pulls)
+
+</div>

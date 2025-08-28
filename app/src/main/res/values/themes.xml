@@ -16,4 +16,13 @@
         <item name="android:windowLightStatusBar">false</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <!-- Splash Screen Theme -->
+    <style name="Theme.Grocify.Splash" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="android:windowBackground">@color/primary</item>
+        <item name="android:statusBarColor">@color/primary</item>
+        <item name="android:navigationBarColor">@color/primary</item>
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
 </resources>

@@ -7,7 +7,7 @@
     android:background="@color/background"
     tools:context=".ListsActivity">
 
-    <!-- Header Bar -->
+    <!-- Modern Header Bar -->
     <LinearLayout
         android:id="@+id/header_bar"
         android:layout_width="match_parent"
@@ -17,7 +17,7 @@
         android:gravity="center_vertical"
         android:orientation="horizontal"
         android:paddingHorizontal="@dimen/padding_screen"
-        android:paddingTop="@dimen/spacing_lg"
+        android:paddingTop="@dimen/spacing_xl"
         android:paddingBottom="@dimen/spacing_lg"
         android:fitsSystemWindows="true"
         app:layout_constraintTop_toTopOf="parent">
@@ -44,29 +44,626 @@
             android:gravity="center"
             android:text="My Lists"
             android:textColor="@color/text_on_primary"
-            android:textSize="@dimen/text_size_h6"
+            android:textSize="@dimen/text_size_h5"
             android:textStyle="bold" />
 
-        <!-- Spacer to balance title -->
-        <View
+        <!-- Add New List Button -->
+        <ImageView
+            android:id="@+id/add_list_button"
             android:layout_width="@dimen/touch_target_min"
-            android:layout_height="@dimen/touch_target_min" />
+            android:layout_height="@dimen/touch_target_min"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:contentDescription="Add New List"
+            android:focusable="true"
+            android:padding="@dimen/spacing_md"
+            android:src="@drawable/ic_add"
+            app:tint="@color/text_on_primary" />
     </LinearLayout>
 
     <!-- Main Content -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintTop_toBottomOf="@id/header_bar"
+        android:fillViewport="true"
         app:layout_constraintBottom_toTopOf="@id/bottom_navigation"
-        android:fillViewport="true">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/header_bar">
 
         <LinearLayout
             android:id="@+id/lists_container"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="@dimen/padding_screen"/>
+            android:padding="@dimen/padding_screen">
+
+            <!-- Weekly Groceries List - Modern Card -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/spacing_lg"
+                app:cardBackgroundColor="@color/surface"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="20dp">
+
+                    <!-- List Icon with Modern Background -->
+                    <ImageView
+                        android:id="@+id/list_icon_1"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:background="@drawable/bg_icon_circle"
+                        android:padding="@dimen/spacing_md"
+                        android:src="@drawable/ic_checklist"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:tint="@color/primary" />
+
+                    <!-- List Name -->
+                    <TextView
+                        android:id="@+id/list_name_1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/spacing_lg"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="Weekly Groceries"
+                        android:textColor="@color/text_primary"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toStartOf="@id/action_buttons_1"
+                        app:layout_constraintStart_toEndOf="@id/list_icon_1"
+                        app:layout_constraintTop_toTopOf="@id/list_icon_1" />
+
+                    <!-- Action Buttons Container -->
+                    <LinearLayout
+                        android:id="@+id/action_buttons_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/list_name_1">
+
+                        <!-- Share Button -->
+                        <ImageView
+                            android:id="@+id/share_icon_1"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_marginEnd="@dimen/spacing_sm"
+                            android:background="@drawable/bg_icon_circle"
+                            android:clickable="true"
+                            android:contentDescription="Share List"
+                            android:focusable="true"
+                            android:padding="8dp"
+                            android:src="@drawable/ic_share"
+                            app:tint="@color/text_secondary" />
+
+                        <!-- Delete Button -->
+                        <ImageView
+                            android:id="@+id/delete_icon_1"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:background="@drawable/bg_icon_circle"
+                            android:clickable="true"
+                            android:contentDescription="Delete List"
+                            android:focusable="true"
+                            android:padding="8dp"
+                            android:src="@drawable/ic_delete"
+                            app:tint="@color/error" />
+
+                    </LinearLayout>
+
+                    <!-- Item Count and Date Row -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_sm"
+                        android:orientation="horizontal"
+                        app:layout_constraintEnd_toEndOf="@id/list_name_1"
+                        app:layout_constraintStart_toStartOf="@id/list_name_1"
+                        app:layout_constraintTop_toBottomOf="@id/list_name_1">
+
+                        <!-- Item Count Chip -->
+                        <TextView
+                            android:id="@+id/item_count_1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_chip_modern"
+                            android:paddingHorizontal="12dp"
+                            android:paddingVertical="6dp"
+                            android:text="15 items"
+                            android:textColor="@color/primary"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                        <!-- Date -->
+                        <TextView
+                            android:id="@+id/list_date_1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/spacing_md"
+                            android:text="Saved on Oct 26"
+                            android:textColor="@color/text_secondary"
+                            android:textSize="12sp" />
+
+                    </LinearLayout>
+
+                    <!-- Progress Section -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_lg"
+                        android:orientation="vertical"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/list_icon_1">
+
+                        <!-- Progress Bar Row -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <!-- Progress Bar -->
+                            <ProgressBar
+                                android:id="@+id/progress_bar_1"
+                                style="?android:attr/progressBarStyleHorizontal"
+                                android:layout_width="0dp"
+                                android:layout_height="8dp"
+                                android:layout_weight="1"
+                                android:progress="60"
+                                android:progressDrawable="@drawable/bg_progress_bar" />
+
+                            <!-- Progress Percentage -->
+                            <TextView
+                                android:id="@+id/progress_text_1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/spacing_md"
+                                android:text="60%"
+                                android:textColor="@color/success"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+
+                        <!-- Progress Label -->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="complete"
+                            android:textColor="@color/text_secondary"
+                            android:textSize="12sp" />
+
+                    </LinearLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Party Supplies List - Modern Card -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/spacing_lg"
+                app:cardBackgroundColor="@color/surface"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="20dp">
+
+                    <!-- List Icon with Modern Background -->
+                    <ImageView
+                        android:id="@+id/list_icon_2"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:background="@drawable/bg_icon_circle"
+                        android:padding="@dimen/spacing_md"
+                        android:src="@drawable/ic_checklist"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:tint="@color/primary" />
+
+                    <!-- List Name -->
+                    <TextView
+                        android:id="@+id/list_name_2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/spacing_lg"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="Party Supplies"
+                        android:textColor="@color/text_primary"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toStartOf="@id/action_buttons_2"
+                        app:layout_constraintStart_toEndOf="@id/list_icon_2"
+                        app:layout_constraintTop_toTopOf="@id/list_icon_2" />
+
+                    <!-- Action Buttons Container -->
+                    <LinearLayout
+                        android:id="@+id/action_buttons_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/list_name_2">
+
+                        <!-- Share Button -->
+                        <ImageView
+                            android:id="@+id/share_icon_2"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_marginEnd="@dimen/spacing_sm"
+                            android:background="@drawable/bg_icon_circle"
+                            android:clickable="true"
+                            android:contentDescription="Share List"
+                            android:focusable="true"
+                            android:padding="8dp"
+                            android:src="@drawable/ic_share"
+                            app:tint="@color/text_secondary" />
+
+                        <!-- Delete Button -->
+                        <ImageView
+                            android:id="@+id/delete_icon_2"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:background="@drawable/bg_icon_circle"
+                            android:clickable="true"
+                            android:contentDescription="Delete List"
+                            android:focusable="true"
+                            android:padding="8dp"
+                            android:src="@drawable/ic_delete"
+                            app:tint="@color/error" />
+
+                    </LinearLayout>
+
+                    <!-- Item Count and Date Row -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_sm"
+                        android:orientation="horizontal"
+                        app:layout_constraintEnd_toEndOf="@id/list_name_2"
+                        app:layout_constraintStart_toStartOf="@id/list_name_2"
+                        app:layout_constraintTop_toBottomOf="@id/list_name_2">
+
+                        <!-- Item Count Chip -->
+                        <TextView
+                            android:id="@+id/item_count_2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_chip_modern"
+                            android:paddingHorizontal="12dp"
+                            android:paddingVertical="6dp"
+                            android:text="8 items"
+                            android:textColor="@color/primary"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                        <!-- Date -->
+                        <TextView
+                            android:id="@+id/list_date_2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/spacing_md"
+                            android:text="Saved on Oct 25"
+                            android:textColor="@color/text_secondary"
+                            android:textSize="12sp" />
+
+                    </LinearLayout>
+
+                    <!-- Progress Section -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_lg"
+                        android:orientation="vertical"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/list_icon_2">
+
+                        <!-- Progress Bar Row -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <!-- Progress Bar -->
+                            <ProgressBar
+                                android:id="@+id/progress_bar_2"
+                                style="?android:attr/progressBarStyleHorizontal"
+                                android:layout_width="0dp"
+                                android:layout_height="8dp"
+                                android:layout_weight="1"
+                                android:progress="25"
+                                android:progressDrawable="@drawable/bg_progress_bar" />
+
+                            <!-- Progress Percentage -->
+                            <TextView
+                                android:id="@+id/progress_text_2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/spacing_md"
+                                android:text="25%"
+                                android:textColor="@color/success"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+
+                        <!-- Progress Label -->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="complete"
+                            android:textColor="@color/text_secondary"
+                            android:textSize="12sp" />
+
+                    </LinearLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Monthly Essentials List -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/spacing_md"
+                app:cardBackgroundColor="@color/surface"
+                app:cardCornerRadius="@dimen/corner_radius_card"
+                app:cardElevation="@dimen/elevation_card">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/padding_card">
+
+                    <!-- List Icon -->
+                    <ImageView
+                        android:id="@+id/list_icon_3"
+                        android:layout_width="@dimen/size_icon_xl"
+                        android:layout_height="@dimen/size_icon_xl"
+                        android:background="@drawable/bg_icon_circle"
+                        android:padding="@dimen/spacing_md"
+                        android:src="@drawable/ic_checklist"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:tint="@color/text_secondary" />
+
+                    <!-- List Name -->
+                    <TextView
+                        android:id="@+id/list_name_3"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/spacing_md"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="Monthly Essentials"
+                        android:textColor="@color/text_primary"
+                        android:textSize="@dimen/text_size_body1"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/list_icon_3"
+                        app:layout_constraintTop_toTopOf="@id/list_icon_3" />
+
+                    <!-- Item Count Chip -->
+                    <TextView
+                        android:id="@+id/item_count_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_xs"
+                        android:background="@drawable/bg_chip_modern"
+                        android:paddingHorizontal="@dimen/chip_padding_horizontal"
+                        android:paddingVertical="@dimen/chip_padding_vertical"
+                        android:text="22 items"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="@dimen/text_size_caption"
+                        app:layout_constraintStart_toStartOf="@id/list_name_3"
+                        app:layout_constraintTop_toBottomOf="@id/list_name_3" />
+
+                    <!-- Date -->
+                    <TextView
+                        android:id="@+id/list_date_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/spacing_sm"
+                        android:text="Saved on Oct 24"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="@dimen/text_size_caption"
+                        app:layout_constraintBottom_toBottomOf="@id/item_count_3"
+                        app:layout_constraintStart_toEndOf="@id/item_count_3"
+                        app:layout_constraintTop_toTopOf="@id/item_count_3" />
+
+                    <!-- Progress Bar -->
+                    <ProgressBar
+                        android:id="@+id/progress_bar_3"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="0dp"
+                        android:layout_height="6dp"
+                        android:layout_marginTop="@dimen/spacing_lg"
+                        android:progress="80"
+                        android:progressDrawable="@drawable/bg_progress_bar"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/list_icon_3" />
+
+                    <!-- Progress Text -->
+                    <TextView
+                        android:id="@+id/progress_text_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_sm"
+                        android:text="80% complete"
+                        android:textColor="@color/success"
+                        android:textSize="@dimen/text_size_caption"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/progress_bar_3" />
+
+                    <!-- Share Icon -->
+                    <ImageView
+                        android:layout_width="@dimen/touch_target_min"
+                        android:layout_height="@dimen/touch_target_min"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:padding="@dimen/spacing_md"
+                        android:src="@drawable/ic_share"
+                        app:layout_constraintEnd_toStartOf="@id/delete_icon_3"
+                        app:layout_constraintTop_toTopOf="@id/progress_text_3"
+                        app:tint="@color/text_secondary" />
+
+                    <!-- Delete Icon -->
+                    <ImageView
+                        android:id="@+id/delete_icon_3"
+                        android:layout_width="@dimen/touch_target_min"
+                        android:layout_height="@dimen/touch_target_min"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:padding="@dimen/spacing_md"
+                        android:src="@drawable/ic_delete"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/progress_text_3"
+                        app:tint="@color/error" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Healthy Meals List -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/spacing_md"
+                app:cardBackgroundColor="@color/surface"
+                app:cardCornerRadius="@dimen/corner_radius_card"
+                app:cardElevation="@dimen/elevation_card">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/padding_card">
+
+                    <!-- List Icon -->
+                    <ImageView
+                        android:id="@+id/list_icon_4"
+                        android:layout_width="@dimen/size_icon_xl"
+                        android:layout_height="@dimen/size_icon_xl"
+                        android:background="@drawable/bg_icon_circle"
+                        android:padding="@dimen/spacing_md"
+                        android:src="@drawable/ic_checklist"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:tint="@color/text_secondary" />
+
+                    <!-- List Name -->
+                    <TextView
+                        android:id="@+id/list_name_4"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/spacing_md"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="Healthy Meals"
+                        android:textColor="@color/text_primary"
+                        android:textSize="@dimen/text_size_body1"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/list_icon_4" />
+
+                    <!-- Item Count Chip -->
+                    <TextView
+                        android:id="@+id/item_count_4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_xs"
+                        android:background="@drawable/bg_chip_modern"
+                        android:paddingHorizontal="@dimen/chip_padding_horizontal"
+                        android:paddingVertical="@dimen/chip_padding_vertical"
+                        android:text="12 items"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="@dimen/text_size_caption"
+                        app:layout_constraintStart_toStartOf="@id/list_name_4"
+                        app:layout_constraintTop_toBottomOf="@id/list_name_4" />
+
+                    <!-- Date -->
+                    <TextView
+                        android:id="@+id/list_date_4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/spacing_sm"
+                        android:text="Saved on Oct 23"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="@dimen/text_size_caption"
+                        app:layout_constraintBottom_toBottomOf="@id/item_count_4"
+                        app:layout_constraintStart_toEndOf="@id/item_count_4"
+                        app:layout_constraintTop_toTopOf="@id/item_count_4" />
+
+                    <!-- Progress Bar -->
+                    <ProgressBar
+                        android:id="@+id/progress_bar_4"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="0dp"
+                        android:layout_height="6dp"
+                        android:layout_marginTop="@dimen/spacing_lg"
+                        android:progress="45"
+                        android:progressDrawable="@drawable/bg_progress_bar"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/list_icon_4" />
+
+                    <!-- Progress Text -->
+                    <TextView
+                        android:id="@+id/progress_text_4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_sm"
+                        android:text="45% complete"
+                        android:textColor="@color/success"
+                        android:textSize="@dimen/text_size_caption"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/progress_bar_4" />
+
+                    <!-- Share Icon -->
+                    <ImageView
+                        android:layout_width="@dimen/touch_target_min"
+                        android:layout_height="@dimen/touch_target_min"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:padding="@dimen/spacing_md"
+                        android:src="@drawable/ic_share"
+                        app:layout_constraintEnd_toStartOf="@id/delete_icon_4"
+                        app:layout_constraintTop_toTopOf="@id/progress_text_4"
+                        app:tint="@color/text_secondary" />
+
+                    <!-- Delete Icon -->
+                    <ImageView
+                        android:id="@+id/delete_icon_4"
+                        android:layout_width="@dimen/touch_target_min"
+                        android:layout_height="@dimen/touch_target_min"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:padding="@dimen/spacing_md"
+                        android:src="@drawable/ic_delete"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/progress_text_4"
+                        app:tint="@color/error" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
 
     </ScrollView>
 

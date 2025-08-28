@@ -3,11 +3,11 @@
     <!-- Base spacing values -->
     <dimen name="spacing_xs">4dp</dimen>
     <dimen name="spacing_sm">8dp</dimen>
-    <dimen name="spacing_md">12dp</dimen>
-    <dimen name="spacing_lg">16dp</dimen>
-    <dimen name="spacing_xl">20dp</dimen>
-    <dimen name="spacing_xxl">24dp</dimen>
-    <dimen name="spacing_xxxl">32dp</dimen>
+    <dimen name="spacing_md">16dp</dimen>
+    <dimen name="spacing_lg">24dp</dimen>
+    <dimen name="spacing_xl">32dp</dimen>
+    <dimen name="spacing_xxl">48dp</dimen>
+    <dimen name="spacing_xxxl">64dp</dimen>
     
     <!-- Margins -->
     <dimen name="margin_screen">16dp</dimen>
@@ -17,12 +17,21 @@
     
     <!-- Padding -->
     <dimen name="padding_screen">16dp</dimen>
+    <dimen name="padding_sm">8dp</dimen>
+    <dimen name="padding_md">16dp</dimen>
+    <dimen name="padding_lg">24dp</dimen>
+    <dimen name="padding_xl">32dp</dimen>
+    <dimen name="padding_xxl">48dp</dimen>
     <dimen name="padding_card">16dp</dimen>
     <dimen name="padding_item">12dp</dimen>
     <dimen name="padding_button">12dp</dimen>
     <dimen name="padding_chip">8dp</dimen>
     
-    <!-- Elevation -->
+    <!-- Elevations -->
+    <dimen name="elevation_none">0dp</dimen>
+    <dimen name="elevation_sm">2dp</dimen>
+    <dimen name="elevation_md">4dp</dimen>
+    <dimen name="elevation_lg">8dp</dimen>
     <dimen name="elevation_card">4dp</dimen>
     <dimen name="elevation_fab">8dp</dimen>
     <dimen name="elevation_app_bar">4dp</dimen>
@@ -35,15 +44,22 @@
     <dimen name="radius_md">12dp</dimen>
     <dimen name="radius_lg">16dp</dimen>
     <dimen name="radius_xl">20dp</dimen>
+    <dimen name="border_radius_sm">4dp</dimen>
+    <dimen name="border_radius_md">8dp</dimen>
+    <dimen name="border_radius_lg">12dp</dimen>
+    <dimen name="border_radius_xl">16dp</dimen>
     
     <!-- Sizes -->
     <dimen name="size_icon_sm">16dp</dimen>
     <dimen name="size_icon_md">24dp</dimen>
     <dimen name="size_icon_lg">32dp</dimen>
-    <dimen name="size_icon_xl">48dp</dimen>
+    <dimen name="size_icon_xl">80dp</dimen>
+    <dimen name="size_icon_xxl">96dp</dimen>
     <dimen name="size_avatar">40dp</dimen>
     <dimen name="size_category_icon">64dp</dimen>
     <dimen name="size_item_image">64dp</dimen>
+    <dimen name="size_product_image">80dp</dimen>
+    <dimen name="size_thumbnail">48dp</dimen>
     <dimen name="size_fab">56dp</dimen>
     <dimen name="size_button_height">48dp</dimen>
     <dimen name="size_toolbar_height">56dp</dimen>
@@ -51,19 +67,22 @@
     
     <!-- Touch targets -->
     <dimen name="touch_target_min">48dp</dimen>
-    <dimen name="touch_target_button">44dp</dimen>
+    <dimen name="touch_target_md">56dp</dimen>
+    <dimen name="touch_target_lg">64dp</dimen>
+    <dimen name="touch_target_button">48dp</dimen>
     
     <!-- Text sizes -->
-    <dimen name="text_size_h1">28sp</dimen>
-    <dimen name="text_size_h2">24sp</dimen>
-    <dimen name="text_size_h3">20sp</dimen>
-    <dimen name="text_size_h4">18sp</dimen>
-    <dimen name="text_size_body1">16sp</dimen>
-    <dimen name="text_size_body2">14sp</dimen>
     <dimen name="text_size_caption">12sp</dimen>
+    <dimen name="text_size_body2">14sp</dimen>
+    <dimen name="text_size_body1">16sp</dimen>
+    <dimen name="text_size_h6">18sp</dimen>
+    <dimen name="text_size_h5">20sp</dimen>
+    <dimen name="text_size_h4">24sp</dimen>
+    <dimen name="text_size_h3">28sp</dimen>
+    <dimen name="text_size_h2">32sp</dimen>
+    <dimen name="text_size_h1">36sp</dimen>
+    <dimen name="text_size_button">16sp</dimen>
     <dimen name="text_size_overline">10sp</dimen>
-    <dimen name="text_size_h5">24sp</dimen>
-    <dimen name="text_size_h6">20sp</dimen>
     <dimen name="text_size_subtitle1">16sp</dimen>
     <dimen name="text_size_subtitle2">14sp</dimen>
     
@@ -95,9 +114,13 @@
     <dimen name="progress_size_md">24dp</dimen>
     <dimen name="progress_size_lg">32dp</dimen>
 
+    <!-- Chip dimensions -->
     <dimen name="chip_padding_horizontal">12dp</dimen>
     <dimen name="chip_padding_vertical">6dp</dimen>
-    <dimen name="corner_radius_button">24dp</dimen>
+    <dimen name="corner_radius_button">28dp</dimen>
     <dimen name="corner_radius_card">16dp</dimen>
     <dimen name="corner_radius_chip">20dp</dimen>
+    <dimen name="corner_radius_sm">4dp</dimen>
+    <dimen name="corner_radius_md">8dp</dimen>
+    <dimen name="corner_radius_lg">12dp</dimen>
 </resources>
